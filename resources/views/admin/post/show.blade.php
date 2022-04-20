@@ -7,6 +7,7 @@
 
             <h1>{{$post->title}}</h1>
             <p><small>Slug: {{$post->slug}}</small></p>
+            <p>{{$post->category->name}}</p>
             <p>{{$post->content}}</p>
 
             <a class="btn btn-info" href="{{ route('admin.posts.index') }}">Back to posts list</a>

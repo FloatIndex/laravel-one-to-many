@@ -17,11 +17,22 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="category_id">Categoria</label>
+                    <select class="form-control" id="category_id" name="category_id">
+                        <option value="">No category</option>
+                        @foreach ($categories as $category)
+                            <option {{old('category_id') == $category->id ? 'selected' : ''}} value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="content">Content</label>
                     <textarea class="form-control" id="content" name="content" rows="10">{{old('content')}}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Create</button>
+                <a class="btn btn-secondary " href="{{ route('admin.posts.index') }}">Cancel</a>
             </form>
 
         </div>
