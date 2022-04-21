@@ -27,8 +27,7 @@
                                 <td>{{$post->title}}</td>
                                 <td>{{substr($post->content, 0, 30)}}</td>
                                 <td>{{$post->slug}}</td>
-                                {{-- <td>{{ !empty($post->category) ? $post->category->name : '' }}</td> --}}
-                                <td>{{$post->category->name}}</td> {{-- con category richiamo la funzione category() del model Post--}}
+                                <td>{{ !empty($post->category) ? $post->category->name : '-' }}</td> {{-- con category richiamo la funzione category() del model Post--}}
                                 <td>
                                     <a class="btn btn-info" href="{{ route('admin.posts.show', $post) }}">Show</a>
                                     <a class="btn btn-warning" href="{{ route('admin.posts.edit', $post) }}">Edit</a>
